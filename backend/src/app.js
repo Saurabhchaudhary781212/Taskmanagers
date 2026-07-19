@@ -19,9 +19,9 @@ app.use(
 );
 app.use(express.json());
 
-app.use("/api/auth", authRoutes);
-app.use("/api/tasks", taskRoutes);
-app.get("/", (req, res) => {
+app.use("https://taskmanagers-ila1.onrender.com/api/auth", authRoutes);
+app.use("https://taskmanagers-ila1.onrender.com/api/tasks", taskRoutes);
+app.get("https://taskmanagers-ila1.onrender.com/", (req, res) => {
     res.status(200).json({
         success: true,
         message: "Task Manager API is running 🚀",
@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
 
 app.use(notFound);
 app.use(errorHandler);
-app.get("/", (req, res) => {
+app.get("https://taskmanagers-ila1.onrender.com/", (req, res) => {
     res.json({ message: "Task Manager API Running" });
 });
 
