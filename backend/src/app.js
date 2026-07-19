@@ -22,12 +22,7 @@ app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
 
-app.get("/", (req, res) => {
-    res.status(200).json({
-        success: true,
-        message: "Task Manager API is running 🚀",
-    });
-});
+
 
 app.use(notFound);
 app.use(errorHandler);
