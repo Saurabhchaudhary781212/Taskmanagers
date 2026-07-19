@@ -1,37 +1,20 @@
-import app from "./src/app.js";
 import dotenv from "dotenv";
-import connectDB from "./src/db/db.js"
 dotenv.config();
 
+import app from "./src/app.js";
+import connectDB from "./src/db/db.js";
 
-console.log(process.env.MONGODB_URL);
+const PORT = process.env.PORT || 8000;
 
-const PORT = process.env.PORT;
-connectDB();
+const startServer = async() => {
+    try {
+        await connectDB();
+        app.listen(PORT, () => {
+            console.log(`Server running on port ${PORT}`);
+        });
+    } catch (err) {
+        console.error(err);
+    }
+};
 
-app.listen(PORT, () => {
-        console.log(`listening to ${PORT}`)
-    })
-    // import dotenv from "dotenv";
-    // dotenv.config();
-
-// import app from "./src/app.js";
-// import connectDB from "./src/db/db.js";
-
-// const PORT = process.env.PORT;
-
-// const startServer = async() => {
-//     try {
-//         await connectDB();
-//         console.log("MongoDB Connected");
-
-//         app.listen(PORT, () => {
-//             console.log(`Server running on port ${PORT}`);
-//         });
-//     } catch (error) {
-//         console.error("Server startup failed:", error);
-//         process.exit(1);
-//     }
-// };
-
-// startServer();
+startServer();
