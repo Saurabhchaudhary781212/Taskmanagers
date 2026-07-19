@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 const api = axios.create({
-    baseURL: import.meta.env.VITE_API_URL || "https://taskmanagers-ila1.onrender.com/api",
+    baseURL: import.meta.env.VITE_API_URL || "https://taskmanagers-ou45.onrender.com/api",
 });
 
 api.interceptors.request.use((config) => {
