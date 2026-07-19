@@ -1,25 +1,8 @@
-// import axios from "axios";
-
-
-// const api = axios.create({
-//     baseURL: import.meta.env.VITE_API_URL || "https://taskmanager-backend-owis.onrender.com",
-// });
-
-// api.interceptors.request.use((config) => {
-//     const token = localStorage.getItem("token");
-
-//     if (token) {
-//         config.headers.Authorization = `Bearer ${token}`;
-//     }
-
-//     return config;
-// });
-
-// export default api;
 import axios from "axios";
 
+
 const api = axios.create({
-    baseURL: "https://taskmanager-backend-owis.onrender.com/api",
+    baseURL: import.meta.env.VITE_API_URL || "https://taskmanagers-ila1.onrender.com/api",
 });
 
 api.interceptors.request.use((config) => {
@@ -33,3 +16,5 @@ api.interceptors.request.use((config) => {
 });
 
 export default api;
+
+// https://taskmanagers-ila1.onrender.com/api
